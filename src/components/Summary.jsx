@@ -1,5 +1,6 @@
-import { Box, Flex, Image, Spacer, useBoolean } from "@chakra-ui/react"
+import { Box, Center, Flex, Heading, Image, Spacer, Tag, useBoolean } from "@chakra-ui/react"
 import { BsChevronCompactDown, BsChevronCompactUp } from "react-icons/bs"
+import Cta from "./Cta"
 
 
 function Summary() {
@@ -7,34 +8,43 @@ function Summary() {
 
     return (
         <>
-            <Box>
+            <Box bg='white' p={3} borderRadius={8}>
 
                 <Flex>
-                    <Image src="src/assets/btcIcon.png" alt="BTC icon" />
+
+                    <Image w={'50px'} src="src/assets/btcIcon.png" alt="BTC icon" mr={2} />
+                    <Center>
+                        <h2>Bitcoin</h2>
+                    </Center>
                     <Spacer />
-                    <h2>Bitcoin</h2>
+                    <Center>
+
+                        <p>BTC</p>
+                    </Center>
+                </Flex>
+                <Spacer h={6}/>
+                <Heading>3.529020 BTC</Heading>
+                <Spacer h={6}/>
+
+                <Flex>
+                    <span>$19.153 USD</span>
                     <Spacer />
-
-                    <p>BTC</p>
-
-                    <p>3.529020 BTC</p>
-                    <Box>
-                        <span>$19.153 USD</span>
-
-                        <Box> <span>-2.23%</span></Box>
-                    </Box>
+                    <Box> <Tag bg={'red'} textColor={"white"}>-2.23%</Tag></Box>
                 </Flex>
                 {flag && (
                     <>
 
                         <p>More info</p>
-                        <p>CTA here</p>
+                        <Cta />
                     </>
                 )}
-                <button onClick={setFlag.toggle}>
-                    {flag ? <BsChevronCompactUp /> : <BsChevronCompactDown />}
+                <Center>
 
-                </button>
+                    <button onClick={setFlag.toggle}>
+                        {flag ? <BsChevronCompactUp /> : <BsChevronCompactDown />}
+
+                    </button>
+                </Center>
             </Box>
         </>
     )

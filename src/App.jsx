@@ -8,16 +8,17 @@ import { Box, Container } from '@chakra-ui/react'
 function App() {
 
   return (
-    <Container>
-      <Header />
-      <Box>
+    <>
 
-      <Summary />
-      <Graph />
-      <Cta />
-      </Box>
+      <Header />
+        <Box p="5" bg={'gray.100'}>
+
+          <Summary />
+          <Graph />
+          <Cta />
+        </Box>
       <Navigation />
-    </Container>
+    </>
   )
 }
 
